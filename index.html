@@ -1,383 +1,428 @@
-<!DOCTYPE HTML>
-<html lang="en"><head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-211172484-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shujie Yang — Researcher at Tencent</title>
+  <meta name="description" content="Shujie Yang's academic homepage. Research in LLM, Generative Recommendation, and AI for Science.">
+  <meta name="author" content="Shujie Yang">
 
-  gtag('config', 'UA-211172484-2');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211172484-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-211172484-2');
+  </script>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-
-  <title>Shujie Yang</title>
-  
-  <meta name="author" content="Shujie">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" href="images/thu.jpeg">
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Shujie Yang</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#misc">Misc</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <name>Shujie Yang</name>
-          
-          <p>Hi there👋 thanks for visiting my website! 
-            I'm a MS student at the <a href="https://www.tbsi.edu.cn/" target="_blank">Tsinghua-Berkeley Shenzhen Institute</a> @ Tsinghua University, where I am fortunate to be advised by Prof. <a href="http://www.tbsi.edu.cn/dkc/main.htm/">Kaichen Dong </a> and co-supervised by Prof. <a href="https://andytang15.github.io">Yansong Tang</a>. I affiliated with the <a href="https://dkcgroup.github.io/">Dong<sup></sup> lab</a> and <a href="https://andytang15.github.io/">IVG-SZ</a>. 
-            Prior to that, I obtained my bachelor's degree in mathematics at <a href="http://www.xjtu.edu.cn/">Xi'an Jiaotong University</a> (2019-2023) and had wonderful time conducting research at the <a href="https://luoundergradxjtu.github.io/">LUD lab</a> advised by Prof. <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a>.
-          </p>
-          <p> 
-          My research generally focuses on social network, graph neural networks, <strong>LLM for Recommendation, Reinforcement Learning and AI for Science (currently)</strong>...
-          </p>
-
-          <p>In 2023, I spent a spring at VIP Group @ SUSTech to work with Prof. <a href="https://scholar.google.com/citations?user=qI80ipUAAAAJ&hl=zh-CN&oi=ao">Jinbao Wang</a>.</p>
-
-          <p>I was in Xiaohongshu AIGC group as a research intern in the end of 2024 and the beginning of 2025. </p>
-          
-          <p>I was in Kuaishou Recommendation LLM Group <strong>(OneRec)</strong> as a research intern from 2025.6 to 2026.3.</p>
-
-          <p>I will join Tencent full-time in WXG WeChat Channel, focusing on LLM and Agent research.</p>
-
-          
-          <p> 
-            Please feel free to drop me an Email for any form of communication or collaboration!☘️
-          </p>
-          <p style="text-align:center"> 
-            Email: <span class="email-highlight">yangsj23 [at] mails [dot] tsinghua [dot] edu [dot] cn</span> / <span class="email-highlight">yangshujie [at] stu [dot] xjtu [dot] edu [dot] cn</span>
-          </p>
-          <div class="social-links">
-            <a href="https://scholar.google.com/citations?user=piophWsAAAAJ&hl=zh-CN">Google Scholar</a>
-            <a href="https://github.com/YangSJ2019">Github</a>
-            <a href="www.linkedin.com/in/shujie-yang">Linkedin</a>
-          </div>
+  <header class="hero" id="about">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1 class="hero-name">Shujie Yang <span class="hero-cn">杨舒杰</span></h1>
+        <p class="hero-tagline">Researcher @ Tencent WXG &nbsp;·&nbsp; Tsinghua University M.S.</p>
+        <p class="hero-bio">
+          I research <strong>Large Language Models</strong>, <strong>Generative Recommendation</strong>, and <strong>Agentic Reinforcement Learning</strong>. Currently at <a href="https://www.tencent.com/" target="_blank">Tencent</a> WeChat Channel (WXG), working on LLM and Agent for live streaming recommendation.
+        </p>
+        <p class="hero-bio">
+          I received my M.S. from <a href="https://www.tbsi.edu.cn/" target="_blank">Tsinghua Shenzhen International Graduate School</a>, advised by Prof. <a href="http://www.tbsi.edu.cn/dkc/main.htm" target="_blank">Kaichen Dong</a> and co-supervised by Prof. <a href="https://andytang15.github.io" target="_blank">Yansong Tang</a>. Prior to that, I obtained my B.E. in Mathematics from <a href="http://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:yangsj23@mails.tsinghua.edu.cn" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+          <a href="https://scholar.google.com/citations?user=piophWsAAAAJ&hl=zh-CN" class="btn btn-outline" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg>
+            Scholar
+          </a>
+          <a href="https://github.com/YangSJ2019" class="btn btn-outline" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/shujie-yang" class="btn btn-outline" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
-        <div class="hero-image">
-          <img alt="profile photo" src="images/portrait.JPG">
+      </div>
+      <div class="hero-portrait">
+        <div class="portrait-wrapper">
+          <img src="images/portrait.JPG" alt="Shujie Yang" loading="eager">
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <div class="container">
-    <!-- What's New Section -->
-    <section class="card">
-      <heading>🔥 What's New</heading>
-      <div class="news-scroll">
-        <ul> 
-          <li> [2026.03] I will join <a href="https://www.tencent.com/">Tencent</a> (WXG WeChat Channel) full-time to research LLM and Agent!🎉</li>
-          <li> [2026.02] <a href="https://arxiv.org/abs/2602.03056">ALPBench</a>: A Benchmark for Attribution-level Long-term Personal Behavior Understanding is on arXiv!</li>
-          <li> [2025.11] <a href="https://arxiv.org/abs/2511.16135">CoSP</a>: Reconfigurable Multi-State Metamaterial Inverse Design via Contrastive Pretrained LLM is on arXiv!</li>
-          <li> [2025.08] <a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a> is on release!🔥🔥🔥</li>
-          <li> [2025.06] <a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a> is on release!🔥🔥🔥</li>
-          <li> [2025.05] I will join Kuaishou Recommendation LLM Group (OneRec) as a research intern.</li>
-          <li> [2024.11] I will join Xiaohongshu AIGC Group as a research intern.</li>
-          <li> [2023.07] I graduated from <a href="http://www.xjtu.edu.cn/">XJTU</a>.</li>
-          <li> [2023.06] <a href="https://arxiv.org/abs/2208.08200" target="_blank">AHEAD</a> was accepted to CIAC 2023.</li>
-          <li> [2023.03] I will join <a href="https://www.tbsi.edu.cn/" target="_blank">Tsinghua University</a> to work with Prof. <a href="http://www.tbsi.edu.cn/dkc/main.htm">Kaichen Dong</a> and Prof. <a href="https://andytang15.github.io">Yansong Tang</a> this fall.</li>
-        </ul>
-      </div>
-    </section>
-        
-    <!-- Research Section -->
-    <section style="margin-top: 40px;">
-      <heading>Research <span style="font-size: 17px; font-weight: 400; color: var(--apple-gray);">(* indicates equal contribution)</span></heading>
-      <p style="margin-bottom: 32px;">
-        My primary research interest lies at Large Language Models, Generative Recommendation, Agentic Reinforcement Learning.
-      </p>
-
-      <!-- Research Items -->
-      <div class="research-item">
-        <div class="research-image">
-          <img src="images/ALPBench.png" alt="ALPBench">
+  <main class="container">
+    <!-- News Section -->
+    <section class="section" id="news">
+      <h2 class="section-title">Recent News</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">Mar 2026</span>
+          <span class="news-text">Joined <a href="https://www.tencent.com/">Tencent</a> WXG (WeChat Channel) full-time, researching LLM and Agent.</span>
         </div>
-        <div class="research-content">
-          <a href="https://arxiv.org/abs/2602.03056" id="ALPBench">
-            <papertitle>ALPBench: A Benchmark for Attribution-level Long-term Personal Behavior Understanding</papertitle>
-          </a>
-          <div class="research-meta">
-            Lu Ren, ..., <strong>Shujie Yang</strong>, ..., Kun Gai
-            <br>
-            <em style="color: #38b000; font-weight: 600;">arXiv 2026</em>
-          </div>
-          <div class="research-links">
-            <a href="https://arxiv.org/abs/2602.03056">arXiv</a>
-            <a href="https://arxiv.org/pdf/2602.03056.pdf">PDF</a>
-          </div>
-          <p>We introduce ALPBench, a benchmark for attribution-level long-term personal behavior understanding. Unlike item-focused benchmarks, ALPBench predicts user-interested attribute combinations, enabling ground-truth evaluation even for newly introduced items.</p>
+        <div class="news-item">
+          <span class="news-date">Feb 2026</span>
+          <span class="news-text"><a href="https://arxiv.org/abs/2602.03056">ALPBench</a> — A benchmark for attribution-level long-term personal behavior understanding — is on arXiv.</span>
         </div>
-      </div>
-
-      <div class="research-item">
-        <div class="research-image">
-          <img src="images/OneRec-V2.png" alt="OneRec-V2">
+        <div class="news-item">
+          <span class="news-date">Nov 2025</span>
+          <span class="news-text"><a href="https://arxiv.org/abs/2511.16135">CoSP</a> — Reconfigurable multi-state metamaterial inverse design via contrastive pretrained LLM — is on arXiv.</span>
         </div>
-        <div class="research-content">
-          <a href="https://arxiv.org/abs/2508.20900" id="OneRec-V2">
-            <papertitle>OneRec-V2 Technical Report</papertitle>
-          </a>
-          <div class="research-meta">
-            Guorui Zhou, ..., <strong>Shujie Yang</strong>, ..., Ziming Li et al.
-            <br>
-            <em style="color: #38b000; font-weight: 600;">arXiv 2025</em>
-          </div>
-          <div class="research-links">
-            <a href="https://arxiv.org/abs/2508.20900">arXiv</a>
-            <a href="https://arxiv.org/pdf/2508.20900.pdf">PDF</a>
-          </div>
-          <p>We propose OneRec-V2 with Lazy Decoder-Only Architecture that eliminates encoder bottlenecks and incorporates real-world user feedback for better preference alignment.</p>
+        <div class="news-item">
+          <span class="news-date">Aug 2025</span>
+          <span class="news-text"><a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a> released.</span>
         </div>
-      </div>
-      
-      <div class="research-item">
-        <div class="research-image">
-          <img src="images/OneRec.png" alt="OneRec">
+        <div class="news-item">
+          <span class="news-date">Jun 2025</span>
+          <span class="news-text"><a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a> released — reshaping recommendation with end-to-end generative approach.</span>
         </div>
-        <div class="research-content">
-          <a href="https://arxiv.org/abs/2506.13695" id="OneRec">
-            <papertitle>OneRec Technical Report</papertitle>
-          </a>
-          <div class="research-meta">
-            Guorui Zhou, Jiaxin Deng, ..., <strong>Shujie Yang</strong>, ..., Zhanyu Liu et al.
-            <br>
-            <em style="color: #38b000; font-weight: 600;">arXiv 2025</em>
-          </div>
-          <div class="research-links">
-            <a href="https://huggingface.co/papers/2506.13695">Hugging Face</a>
-            <a href="https://arxiv.org/pdf/2506.13695.pdf">PDF</a>
-          </div>
-          <p>We propose OneRec, which reshapes the recommendation system through an end-to-end generative approach and achieves promising results. Firstly, we have enhanced the computational FLOPs of the current recommendation model by 10 × and have identified the scaling laws for recommendations within certain boundaries.</p>
+        <div class="news-item">
+          <span class="news-date">Jun 2025</span>
+          <span class="news-text">Joined Kuaishou Recommendation LLM Group (<strong>OneRec</strong>) as a research intern.</span>
         </div>
-      </div>
-      
-      <div class="research-item">
-        <div class="research-image">
-          <img src="images/CoSP.png" alt="CoSP">
+        <div class="news-item">
+          <span class="news-date">Nov 2024</span>
+          <span class="news-text">Joined Xiaohongshu AIGC Group as a research intern.</span>
         </div>
-        <div class="research-content">
-          <a href="https://arxiv.org/abs/2511.16135" id="CoSP">
-            <papertitle>CoSP: Reconfigurable Multi-State Metamaterial Inverse Design via Contrastive Pretrained Large Language Model</papertitle>
-          </a>
-          <div class="research-meta">
-            <strong>Shujie Yang</strong>, Xuzhe Zhao, Yuqi Zhang, Yansong Tang, Kaichen Dong
-            <br>
-            <em style="color: #38b000; font-weight: 600;">arXiv 2025</em>
-          </div>
-          <div class="research-links">
-            <a href="https://arxiv.org/abs/2511.16135">arXiv</a>
-            <a href="https://arxiv.org/pdf/2511.16135.pdf">PDF</a>
-          </div>
-          <p>We propose CoSP, an intelligent inverse design method based on contrastive pretrained LLM for reconfigurable multi-state metamaterials.</p>
-        </div>
-      </div>
-
-      <div class="research-item">
-        <div class="research-image">
-          <img src="https://www.berglogic.com/picture/background/bg.jpg" alt="3DSP" style="width: 50%; margin: 0 auto; display: block;">
-        </div>
-        <div class="research-content">
-          <papertitle>Cauchyformer: Physics-Informed Few-shot Spectrum Inference for Photonic Metasurfaces</papertitle>
-          <div class="research-meta">
-            <strong>Shujie Yang</strong>, Chunjiang Li, Hongyan Fu, Yansong Tang, Kaichen Dong
-            <br>
-            <em style="color: #38b000; font-weight: 600;">Submitted</em>
-          </div>
-        </div>
-      </div> 
-
-      <div class="research-item">
-        <div class="research-image">
-          <img src="images/GADY.png" alt="GADY">
-        </div>
-        <div class="research-content">
-          <a href="https://arxiv.org/abs/2310.16376" id="GADY">
-            <papertitle>GADY: Unsupervised Anomaly Detection on Dynamic Graphs</papertitle>
-          </a>
-          <div class="research-meta">
-            Shiqi Lou, Qingyue Zhang, <strong>Shujie Yang</strong>, <a href="https://people.csail.mit.edu/cloudygoose/">Zhaoxuan Tan</a>, Yuyang Tian, <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a>
-            <br>
-            <em style="color: #38b000; font-weight: 600;">arxiv ePrints</em>
-          </div>
-        </div>
-      </div>
-      
-      <div class="research-item">
-        <div class="research-image">
-          <img src="images/AHEAD.jpg" alt="AHEAD">
-        </div>
-        <div class="research-content">
-          <a href="https://arxiv.org/abs/2208.08200" id="AHEAD">
-            <papertitle>AHEAD: A Triple Attention Based Heterogeneous Graph Anomaly Detection Approach</papertitle>
-          </a>
-          <div class="research-meta">
-            <strong>Shujie Yang</strong>, <a href="https://zhangbinchi.github.io/">Binchi Zhang</a>, <a href="https://bunsenfeng.github.io/">Shangbin Feng</a>, <a href="https://people.csail.mit.edu/cloudygoose/">Zhaoxuan Tan</a>, <a href="https://gr.xjtu.edu.cn/en/web/qhzheng">Qinghua Zheng</a>, Jun Zhou, <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a>
-            <br>
-            <em style="color: #38b000; font-weight: 600;">Proceedings of 2023 Chinese Intelligent Automation Conference</em>
-          </div>
-          <div class="research-links">
-            <a href="https://github.com/YangSJ2019/AHEAD">Github</a>
-            <a href="images/AHEAD Best Paper.pdf">Best Paper</a>
-          </div>
-          <p>We propose AHEAD: a heterogeneity-aware unsupervised graph anomaly detection approach based on the encoder-decoder framework.</p>
-        </div>
-      </div>
-                  
-      <div class="research-item">
-        <div class="research-image">
-          <img src="images/Twibot-22.jpg" alt="TwiBot-22" style="width: 80%;">
-        </div>
-        <div class="research-content">
-          <a href="https://arxiv.org/abs/2206.04564" id="TwiBot-22">
-            <papertitle>TwiBot-22: Towards Graph-Based Twitter Bot Detection</papertitle>
-          </a>
-          <div class="research-meta">
-            <a href="https://bunsenfeng.github.io/">Shangbin Feng*</a>, <a href="http://zhaoxuan.info/">Zhaoxuan Tan*</a>, Herun Wan*, Ningnan Wang*, Zilong Chen*, <a href="https://zhangbinchi.github.io/">Binchi Zhang*</a>, <a href="https://gr.xjtu.edu.cn/en/web/qhzheng">Qinghua Zheng</a>, Wenqian Zhang, Zhenyu Lei, <strong>Shujie Yang</strong>, Xinshun Feng, Qingyue Zhang, Hongrui Wang, Yuhan Liu, Yuyang Bai, Heng Wang, Zijian Cai, Yanbo Wang, Lijing Zheng, Zihan Ma, <a href="http://www.ece.virginia.edu/~jl6qk/">Jundong Li</a>, <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a>
-            <br>
-            <em style="color: #38b000; font-weight: 600;">Proceedings of NeurIPS, Datasets and Benchmarks Track, 2022</em>
-          </div>
-          <div class="research-links">
-            <a href="https://twibot22.github.io/">website</a>
-            <a href="https://github.com/LuoUndergradXJTU/TwiBot-22">GitHub</a>
-            <a href="data/Twibot-22.bib">bibtex</a>
-            <a href="data/TwiBot-22-poster.pdf">poster</a>
-          </div>
-          <p>We present TwiBot-22, the largest graph-based Twitter bot detection benchmark to date, which provides diversified entities and relations in Twittersphere and has considerably better annotation quality.</p>
+        <div class="news-item">
+          <span class="news-date">Jun 2023</span>
+          <span class="news-text"><a href="https://arxiv.org/abs/2208.08200">AHEAD</a> accepted to CIAC 2023 and received <strong>Best Paper Award</strong>.</span>
         </div>
       </div>
     </section>
 
+    <!-- Publications Section -->
+    <section class="section" id="publications">
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-subtitle">* denotes equal contribution</p>
 
-    <!-- Education Section -->
-    <section style="margin-top: 60px;">
-      <heading>Education</heading>
-      
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="images/thu.jpeg" alt="Tsinghua University">
-        </div>
-        <div class="experience-content">
-          <b>Tsinghua University</b>
-          Tsinghua-Berkeley Shenzhen Institute<br>
-          2023.08 - present<br>
-          <b>M.S. in Data Science and Information Technology</b><br>
-          Advisor: Prof. <a href="http://www.tbsi.edu.cn/dkc/main.htm">Kaichen Dong</a><br>
-          Co-supervised by Prof. <a href="https://andytang15.github.io">Yansong Tang</a>
+      <div class="pub-list">
+        <!-- ALPBench -->
+        <article class="pub-item">
+          <div class="pub-thumb">
+            <img src="images/ALPBench.png" alt="ALPBench" loading="lazy">
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2602.03056">ALPBench: A Benchmark for Attribution-level Long-term Personal Behavior Understanding</a></h3>
+            <p class="pub-authors">Lu Ren, ..., <strong>Shujie Yang</strong>, ..., Kun Gai</p>
+            <p class="pub-venue">arXiv 2026</p>
+            <p class="pub-desc">A benchmark for attribution-level long-term personal behavior understanding that predicts user-interested attribute combinations, enabling ground-truth evaluation even for newly introduced items.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2602.03056">arXiv</a>
+              <a href="https://arxiv.org/pdf/2602.03056.pdf">PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- OneRec-V2 -->
+        <article class="pub-item">
+          <div class="pub-thumb">
+            <img src="images/OneRec-V2.png" alt="OneRec-V2" loading="lazy">
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a></h3>
+            <p class="pub-authors">Guorui Zhou, ..., <strong>Shujie Yang</strong>, ..., Ziming Li et al.</p>
+            <p class="pub-venue">arXiv 2025</p>
+            <p class="pub-desc">Proposes a Lazy Decoder-Only Architecture that eliminates encoder bottlenecks and incorporates real-world user feedback for better preference alignment.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2508.20900">arXiv</a>
+              <a href="https://arxiv.org/pdf/2508.20900.pdf">PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- OneRec -->
+        <article class="pub-item">
+          <div class="pub-thumb">
+            <img src="images/OneRec.png" alt="OneRec" loading="lazy">
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a></h3>
+            <p class="pub-authors">Guorui Zhou, Jiaxin Deng, ..., <strong>Shujie Yang</strong>, ..., Zhanyu Liu et al.</p>
+            <p class="pub-venue">arXiv 2025</p>
+            <p class="pub-desc">Reshapes recommendation through an end-to-end generative approach, enhancing computational FLOPs by 10x and identifying scaling laws for recommendations.</p>
+            <div class="pub-links">
+              <a href="https://huggingface.co/papers/2506.13695">Hugging Face</a>
+              <a href="https://arxiv.org/pdf/2506.13695.pdf">PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CoSP -->
+        <article class="pub-item">
+          <div class="pub-thumb">
+            <img src="images/CoSP.png" alt="CoSP" loading="lazy">
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2511.16135">CoSP: Reconfigurable Multi-State Metamaterial Inverse Design via Contrastive Pretrained Large Language Model</a></h3>
+            <p class="pub-authors"><strong>Shujie Yang</strong>, Xuzhe Zhao, Yuqi Zhang, Yansong Tang, Kaichen Dong</p>
+            <p class="pub-venue">arXiv 2025</p>
+            <p class="pub-desc">An intelligent inverse design method based on contrastive pretrained LLM for reconfigurable multi-state metamaterials.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2511.16135">arXiv</a>
+              <a href="https://arxiv.org/pdf/2511.16135.pdf">PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cauchyformer -->
+        <article class="pub-item">
+          <div class="pub-thumb placeholder-thumb">
+            <span>Under Review</span>
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title">Cauchyformer: Physics-Informed Few-shot Spectrum Inference for Photonic Metasurfaces</h3>
+            <p class="pub-authors"><strong>Shujie Yang</strong>, Chunjiang Li, Hongyan Fu, Yansong Tang, Kaichen Dong</p>
+            <p class="pub-venue">Submitted</p>
+          </div>
+        </article>
+
+        <!-- GADY -->
+        <article class="pub-item">
+          <div class="pub-thumb">
+            <img src="images/GADY.png" alt="GADY" loading="lazy">
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2310.16376">GADY: Unsupervised Anomaly Detection on Dynamic Graphs</a></h3>
+            <p class="pub-authors">Shiqi Lou, Qingyue Zhang, <strong>Shujie Yang</strong>, <a href="https://people.csail.mit.edu/cloudygoose/">Zhaoxuan Tan</a>, Yuyang Tian, <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a></p>
+            <p class="pub-venue">arXiv Preprint</p>
+          </div>
+        </article>
+
+        <!-- AHEAD -->
+        <article class="pub-item">
+          <div class="pub-thumb">
+            <img src="images/AHEAD.jpg" alt="AHEAD" loading="lazy">
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2208.08200">AHEAD: A Triple Attention Based Heterogeneous Graph Anomaly Detection Approach</a></h3>
+            <p class="pub-authors"><strong>Shujie Yang</strong>, <a href="https://zhangbinchi.github.io/">Binchi Zhang</a>, <a href="https://bunsenfeng.github.io/">Shangbin Feng</a>, <a href="https://people.csail.mit.edu/cloudygoose/">Zhaoxuan Tan</a>, <a href="https://gr.xjtu.edu.cn/en/web/qhzheng">Qinghua Zheng</a>, Jun Zhou, <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a></p>
+            <p class="pub-venue">CIAC 2023 · <strong class="award">Best Paper Award</strong></p>
+            <div class="pub-links">
+              <a href="https://github.com/YangSJ2019/AHEAD">Code</a>
+              <a href="images/AHEAD Best Paper.pdf">Award</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TwiBot-22 -->
+        <article class="pub-item">
+          <div class="pub-thumb">
+            <img src="images/Twibot-22.jpg" alt="TwiBot-22" loading="lazy">
+          </div>
+          <div class="pub-info">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2206.04564">TwiBot-22: Towards Graph-Based Twitter Bot Detection</a></h3>
+            <p class="pub-authors"><a href="https://bunsenfeng.github.io/">Shangbin Feng*</a>, <a href="http://zhaoxuan.info/">Zhaoxuan Tan*</a>, Herun Wan*, ..., <strong>Shujie Yang</strong>, ..., <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a></p>
+            <p class="pub-venue">NeurIPS 2022 · Datasets and Benchmarks Track</p>
+            <div class="pub-links">
+              <a href="https://twibot22.github.io/">Project</a>
+              <a href="https://github.com/LuoUndergradXJTU/TwiBot-22">Code</a>
+              <a href="data/Twibot-22.bib">BibTeX</a>
+              <a href="data/TwiBot-22-poster.pdf">Poster</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="exp-category">
+        <h3 class="exp-cat-title">Industry</h3>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-logo"><img src="images/tencent.png" alt="Tencent"></div>
+            <div class="exp-detail">
+              <div class="exp-header">
+                <h4>Tencent — WXG WeChat Channel</h4>
+                <span class="exp-date">Mar 2026 – Present</span>
+              </div>
+              <p class="exp-role">Full-time Researcher · LLM &amp; Agent for Recommendation</p>
+              <p class="exp-desc">Researching LLMs and agents for live streaming recommendation in WeChat Channel.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo"><img src="images/kuaishou.png" alt="Kuaishou"></div>
+            <div class="exp-detail">
+              <div class="exp-header">
+                <h4>Kuaishou — Recommendation LLM Group</h4>
+                <span class="exp-date">Jun 2025 – Mar 2026</span>
+              </div>
+              <p class="exp-role">Research Intern · Recommendation LLMs (OneRec)</p>
+              <p class="exp-desc">Applied LLMs to recommendation, focusing on RLHF of generative recommendation LLM (OneRec). Mentor: Qigen Hu.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo"><img src="images/xiaohongshu.jpeg" alt="Xiaohongshu"></div>
+            <div class="exp-detail">
+              <div class="exp-header">
+                <h4>Xiaohongshu — AIGC Group</h4>
+                <span class="exp-date">Nov 2024 – Mar 2025</span>
+              </div>
+              <p class="exp-role">Research Intern</p>
+              <p class="exp-desc">Improved text-to-image generation models (Stable Diffusion, Flux). Mentor: Shuang Sun.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="images/XJTU.png" alt="Xi'an Jiaotong University">
+      <div class="exp-category">
+        <h3 class="exp-cat-title">Education</h3>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-logo"><img src="images/thu.jpeg" alt="Tsinghua University"></div>
+            <div class="exp-detail">
+              <div class="exp-header">
+                <h4>Tsinghua University</h4>
+                <span class="exp-date">Aug 2023 – Jun 2026</span>
+              </div>
+              <p class="exp-role">M.S. in Data Science and Information Technology · Tsinghua-Berkeley Shenzhen Institute</p>
+              <p class="exp-desc">Advisor: Prof. <a href="http://www.tbsi.edu.cn/dkc/main.htm">Kaichen Dong</a> · Co-advisor: Prof. <a href="https://andytang15.github.io">Yansong Tang</a></p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo"><img src="images/XJTU.png" alt="Xi'an Jiaotong University"></div>
+            <div class="exp-detail">
+              <div class="exp-header">
+                <h4>Xi'an Jiaotong University</h4>
+                <span class="exp-date">Aug 2019 – Jul 2023</span>
+              </div>
+              <p class="exp-role">B.E. in Information and Computational Science · School of Mathematics and Statistics</p>
+              <p class="exp-desc">Advisor: Prof. <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a></p>
+            </div>
+          </div>
         </div>
-        <div class="experience-content">
-          <b>Xi'an Jiaotong University</b>
-          School of Mathematics and Statistics<br>
-          2019.08 - 2023.07<br>
-          <b>B.E. in Information and Computational Science</b><br>
-          Advisor: Prof. <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a>
+      </div>
+
+      <div class="exp-category">
+        <h3 class="exp-cat-title">Academic Visits</h3>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-logo"><img src="images/SUSTech.webp" alt="SUSTech"></div>
+            <div class="exp-detail">
+              <div class="exp-header">
+                <h4>Southern University of Science and Technology — VIP Group</h4>
+                <span class="exp-date">Feb – May 2023</span>
+              </div>
+              <p class="exp-role">Visiting Student</p>
+              <p class="exp-desc">Anomaly detection on industrial images. Mentor: <a href="https://faculty.sustech.edu.cn/?iscss=1&p=98966&tagid=fengzheng&go=1">Jinbao Wang</a></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-          
-    <!-- Academic Experiences Section -->
-    <section style="margin-top: 60px;">
-      <heading>Academic/Industrial Experiences</heading>
-      
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="images/tencent.png" alt="Tencent Logo">
-        </div>
-        <div class="experience-content">
-          <b>WeChat Channel @ <a href="https://www.tencent.com/">Tencent</a> (WXG)</b><br>
-          <b>Full-time (LLM & Agent for Recommendation)</b> &nbsp;&nbsp;&nbsp;&nbsp; 2026.03 - present<br>
-          Research LLMs and Agent for live streaming recommendation in WeChat Channel.<br>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="images/kuaishou.png" alt="Kuaishou Logo">
-        </div>
-        <div class="experience-content">
-          <b>Recommendation Large Language Model Group @ <a href="https://www.kuaishou.com/">Kuaishou</a></b><br>
-          <b>Research Intern (Recommendation LLMs)</b> &nbsp;&nbsp;&nbsp;&nbsp; 2025.6 - 2026.3<br>
-          Worked on applying large language models to recommendation scenarios, focusing on RLHF of generative recommendation LLM (OneRec).<br>
-          Mentor: Qigen Hu
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="images/xiaohongshu.jpeg" alt="Xiaohongshu">
-        </div>
-        <div class="experience-content">
-          <b>AIGC Group @ <a href="https://job.xiaohongshu.com/">Xiaohongshu AIGC Group</a></b><br>
-          <b>Research Intern</b> &nbsp;&nbsp;&nbsp;&nbsp; 2024.11 - 2025.3<br>
-          Worked on improving the performance of text2image generation models like Stable Diffusion and Flux.<br>
-          Mentor: Shuang Sun
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="images/SUSTech.webp" alt="SUSTech">
-        </div>
-        <div class="experience-content">
-          <b>VIP Group @ Southern University of Science and Technology</b><br>
-          <b>Visiting Student</b> &nbsp;&nbsp;&nbsp;&nbsp; 2023.02 - 2023.5<br>
-          Worked on anomaly detection on industrial images.<br>
-          Mentor: <a href="https://faculty.sustech.edu.cn/?iscss=1&p=98966&tagid=fengzheng&go=1">Jinbao Wang</a><br>
-          Advisor: Prof. <a href="https://www.sustech.edu.cn/zh/faculties/zhengfeng.html">Feng Zheng</a>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="images/LUD.jpg" alt="LUD Lab">
-        </div>
-        <div class="experience-content">
-          <b>Luo lab Undergraduate Division (LUD) @ Xi'an Jiaotong University</b><br>
-          <b>Member</b> &nbsp;&nbsp;&nbsp;&nbsp; 2022.10 - present<br>
-          Conducted research on various topics including social network analysis and heterogeneous graph anomaly detection.<br>
-          Advisor: Prof. <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a>
-        </div>
-      </div>
-    </section>
-
 
     <!-- Miscellaneous Section -->
-    <section class="card" style="margin-top: 60px;">
-      <heading>Miscellaneous</heading>
-      <ul class="misc-list">
-        <li>I have the fortune to work with brilliant mentors, collaborators, and advisors during my undergraduate and I am truly grateful for their guidance and help. If you feel like I can be of some help to your research career, welcome to reach out!☕</li>
-        <li>My Chinese name is 杨舒杰 (Yang, Shujie).</li>
-        <li>I enjoy jogging🏃 and playing badminton🏸️.</li>
-        <li>I'm a huge fan of Stephen Curry🏀，film series Jhon Wick🕶️， cartoon series Jujutsu Kaisen and Chainsaw Man.</li>
-        <li>I love playing Splatoon 3 and Valorant. </li>
-      </ul>
+    <section class="section" id="misc">
+      <h2 class="section-title">Beyond Research</h2>
+      <div class="misc-grid">
+        <div class="misc-card">
+          <div class="misc-icon">&#127939;</div>
+          <p>Avid jogger and badminton player.</p>
+        </div>
+        <div class="misc-card">
+          <div class="misc-icon">&#127918;</div>
+          <p>Splatoon 3 and Valorant enthusiast.</p>
+        </div>
+        <div class="misc-card">
+          <div class="misc-icon">&#127916;</div>
+          <p>Huge fan of Stephen Curry, the John Wick series, Jujutsu Kaisen, and Chainsaw Man.</p>
+        </div>
+        <div class="misc-card">
+          <div class="misc-icon">&#9749;</div>
+          <p>Always open to collaboration — feel free to reach out!</p>
+        </div>
+      </div>
     </section>
 
     <!-- Visitor Map -->
-    <div style="text-align: center; margin: 60px 0;">
+    <div class="visitor-map">
       <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=20d6d4&w=350&t=tt&d=hmxwpTepdnwa8N3GZVSyr0IF3M3cFTc80h9yQzW-cv4&co=223c94'></script>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
-  <!-- <footer class="footer">
-    <p>Template courtesy: <a href="https://jonbarron.info/">Jon Barron</a>.</p>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Shujie Yang &nbsp;·&nbsp; Last updated April 2026</p>
+    </div>
   </footer>
-</body> -->
 
+  <script>
+    // Theme Toggle
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.setAttribute('data-theme', 'dark');
+    }
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
 
+    // Navbar scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      const currentScroll = window.scrollY;
+      if (currentScroll > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    });
 
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
+    document.querySelectorAll('.pub-item, .exp-item, .news-item, .misc-card').forEach(el => {
+      el.classList.add('animate-on-scroll');
+      observer.observe(el);
+    });
+  </script>
+</body>
 </html>
-
