@@ -101,6 +101,7 @@
           <span class="news-date">Feb 2026</span>
           <span class="news-text"><a href="https://arxiv.org/abs/2602.03056">ALPBench</a> — A benchmark for attribution-level long-term personal behavior understanding — is on arXiv.</span>
         </div>
+        <div class="news-extra-group" id="newsExtra">
         <div class="news-item">
           <span class="news-date">Nov 2025</span>
           <span class="news-text"><a href="https://arxiv.org/abs/2511.16135">CoSP</a> — Reconfigurable multi-state metamaterial inverse design via contrastive pretrained LLM — is on arXiv.</span>
@@ -125,6 +126,11 @@
           <span class="news-date">Jun 2023</span>
           <span class="news-text"><a href="https://arxiv.org/abs/2208.08200">AHEAD</a> accepted to CIAC 2023 and received <strong>Best Paper Award</strong>.</span>
         </div>
+        </div>
+        <button class="news-toggle" id="newsToggle" aria-expanded="false" aria-controls="newsExtra">
+          <span class="news-toggle-label">Show more news</span>
+          <svg class="news-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
       </div>
     </section>
 
@@ -426,6 +432,18 @@
     document.querySelectorAll('.pub-item, .exp-item, .news-item, .misc-card').forEach(el => {
       el.classList.add('animate-on-scroll');
       observer.observe(el);
+    });
+
+    // News collapsible
+    const newsList = document.querySelector('.news-list');
+    const newsToggle = document.getElementById('newsToggle');
+    const newsToggleLabel = newsToggle.querySelector('.news-toggle-label');
+    newsToggle.addEventListener('click', () => {
+      const expanded = newsList.classList.toggle('news-expanded');
+      newsToggle.setAttribute('aria-expanded', expanded);
+      newsToggleLabel.textContent = expanded ? 'Show less' : 'Show more news';
+      // Force-reveal hidden items so the scroll animation never leaves them invisible.
+      newsList.querySelectorAll('.news-extra-group .news-item').forEach(el => el.classList.add('visible'));
     });
   </script>
 </body>
