@@ -4,10 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Shujie Yang is a researcher at Tencent working on large language models, generative recommendation, and reinforcement learning for agents.">
-  <meta name="theme-color" content="#f8f8f5" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#181916" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff">
   <title>Shujie Yang | Research</title>
-  <link rel="icon" href="images/portrait.JPG">
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEWnp6fU1NRbW1sNDQ0yMjINDQ0LCwv9/f0REREAAACGhoZWVlYAAAAAAAAAAAAAAABIUf5NAAAADHRSTlP///9h/6v+//8A//+f1JIDAAAA50lEQVR42n2SvwrCQAzGrw4t+AAqOrlU8QGErh0UfIDO/qnhxp4IgXZyCcXV6UZF7Buoj2euFm2tmiXhx5dL7r4T+hDAK9aeFnoMpVhpcYBKeGJcBSsRVMFawEd8BZIkQUpcpD8USyFcGJ0B9qccyDZiBFkkyYklAznHpoXXBboh2rliEQGXIbbmOKEcqDv4E8qSAXeYliWqBs/cqXanmOIgxoajS08QWogXIieShYLAZzXdNgXo9yRkWwZJAaaKjykBXqx7RJveCrO6olKLudyQ0+z8/4FM+qmogpoNNaNqVtbM/vwOD4iPy056rCd3AAAAAElFTkSuQmCC">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
@@ -16,19 +15,21 @@
       const preference = localStorage.getItem('theme');
       if (preference === 'light' || preference === 'dark') {
         document.documentElement.dataset.theme = preference;
+        document.querySelector('meta[name="theme-color"]').content =
+          preference === 'dark' ? '#0d0d0d' : '#ffffff';
       }
     } catch {}
   </script>
   <style>
     :root {
       color-scheme: light;
-      --page: #f8f8f5;
-      --ink: #1b1c18;
-      --muted: #53554b;
-      --line: #dcded5;
-      --hover: #edeee7;
-      --accent: #4d5a3d;
-      --button-bg: #22231e;
+      --page: #ffffff;
+      --ink: #0d0d0d;
+      --muted: #525252;
+      --line: #e3e3e3;
+      --hover: #f4f4f4;
+      --accent: #3d3d3d;
+      --button-bg: #0d0d0d;
       --button-ink: #fff;
       --gutter: clamp(22px, 5vw, 72px);
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -37,28 +38,14 @@
 
     :root[data-theme="dark"] {
       color-scheme: dark;
-      --page: #181916;
-      --ink: #f1f0e9;
-      --muted: #b8bab0;
-      --line: #393b33;
-      --hover: #242620;
-      --accent: #c1cda7;
-      --button-bg: #eaece1;
-      --button-ink: #1b1c18;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme]) {
-        color-scheme: dark;
-        --page: #181916;
-        --ink: #f1f0e9;
-        --muted: #b8bab0;
-        --line: #393b33;
-        --hover: #242620;
-        --accent: #c1cda7;
-        --button-bg: #eaece1;
-        --button-ink: #1b1c18;
-      }
+      --page: #0d0d0d;
+      --ink: #f5f5f5;
+      --muted: #b4b4b4;
+      --line: #303030;
+      --hover: #202020;
+      --accent: #d4d4d4;
+      --button-bg: #f5f5f5;
+      --button-ink: #0d0d0d;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -88,16 +75,17 @@
 
     .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 29%); align-items: center; column-gap: clamp(40px, 8vw, 120px); padding-block: clamp(64px, 8vw, 118px); }
     .kicker { color: var(--accent); font-size: 13px; font-weight: 650; letter-spacing: 0.035em; }
-    .hero h1 { margin-top: 16px; font-size: clamp(52px, 7.8vw, 112px); font-weight: 500; letter-spacing: -0.092em; line-height: 0.99; }
+    .hero h1 { margin-top: 16px; font-size: clamp(52px, 7.8vw, 112px); font-weight: 500; letter-spacing: -0.072em; line-height: 0.99; }
     .name-cn { margin-top: 16px; color: var(--muted); font-size: 17px; letter-spacing: 0.12em; }
-    .intro { max-width: 38em; margin-top: 22px; font-size: clamp(17px, 1.7vw, 22px); line-height: 1.52; letter-spacing: -0.025em; }
+    .intro { max-width: 37em; margin-top: 22px; font-size: clamp(17px, 1.55vw, 21px); line-height: 1.55; letter-spacing: -0.018em; }
+    .intro + .intro { margin-top: 13px; color: var(--muted); }
     .hero-actions, .profiles, .paper-links { display: flex; flex-wrap: wrap; align-items: center; }
     .hero-actions { gap: 12px 24px; margin-top: 28px; }
     .pill { display: inline-flex; gap: 12px; justify-content: center; align-items: center; border-radius: 100px; padding: 11px 17px; background: var(--button-bg); color: var(--button-ink); font-size: 14px; font-weight: 500; text-decoration: none; }
     .pill:hover { color: var(--button-ink); text-decoration: underline; }
     .profiles { gap: 10px 18px; color: var(--muted); font-size: 14px; }
     .portrait { aspect-ratio: 7 / 8; overflow: hidden; border: 1px solid var(--line); border-radius: 5px; background: var(--hover); }
-    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(0.72); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
 
     .section { border-top: 1px solid var(--line); padding-block: clamp(34px, 5.5vw, 76px); }
     .section-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px 32px; margin-bottom: clamp(24px, 3.5vw, 42px); }
@@ -106,8 +94,7 @@
     .section-header > a:hover { color: var(--ink); text-decoration: underline; }
     .featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-bottom: 37px; }
     .card { min-width: 0; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
-    .card-image { display: grid; place-items: center; aspect-ratio: 2.4; padding: clamp(12px, 2.6vw, 34px); background: #e5e9dd; overflow: hidden; }
-    .card:nth-child(2) .card-image { background: #e8e5ee; }
+    .card-image { display: grid; place-items: center; aspect-ratio: 2.4; padding: clamp(12px, 2.6vw, 34px); background: #f4f4f4; overflow: hidden; }
     .card-image img { width: 100%; height: 100%; min-height: 0; object-fit: contain; mix-blend-mode: multiply; }
     .card-body { padding: clamp(18px, 2.2vw, 30px); }
     .work-meta, .date { color: var(--muted); font-size: 13px; }
@@ -143,7 +130,6 @@
 
     @media (max-width: 780px) {
       .hero { column-gap: 28px; }
-      .hero h1 { letter-spacing: -0.08em; }
     }
 
     @media (max-width: 640px) {
@@ -189,7 +175,8 @@
         <p class="kicker">Researcher at Tencent</p>
         <h1 id="name">Shujie Yang</h1>
         <p class="name-cn" lang="zh-Hans">杨舒杰</p>
-        <p class="intro">I work on large language models, generative recommendation, and reinforcement learning for agents. At Tencent’s WeChat Channels team, I focus on live-stream recommendation.</p>
+        <p class="intro">I’m a researcher on Tencent’s WeChat Channels team. My work spans large language models, AI agents, and generative recommendation. I’m interested in how models learn from user behavior and feedback, and how reinforcement learning can improve recommendation and agent systems.</p>
+        <p class="intro">Previously, I worked on OneRec at Kuaishou, focusing on reinforcement learning from human feedback for generative recommendation. I earned my M.S. at Tsinghua University, where I applied machine learning to photonics problems such as metamaterial inverse design and few-shot spectrum inference.</p>
         <div class="hero-actions">
           <a class="pill" href="#publications">View publications <span aria-hidden="true">↓</span></a>
           <div class="profiles">
@@ -212,31 +199,44 @@
       <div class="featured">
         <article class="card">
           <div class="card-image">
+            <img src="images/OneRec.png" alt="" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="work-meta">Technical report · 2025</p>
+            <h3 class="work-title"><a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a></h3>
+            <p class="work-summary">Formulates recommendation as end-to-end sequence generation and studies how performance scales with training compute.</p>
+            <p class="authors">Guorui Zhou, Jiaxin Deng, …, <strong>Shujie Yang</strong>, …</p>
+            <div class="paper-links">
+              <a href="https://arxiv.org/pdf/2506.13695">PDF</a>
+              <a href="https://huggingface.co/papers/2506.13695">Hugging Face</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image">
             <img src="images/OneRec-V2.png" alt="" loading="lazy">
           </div>
           <div class="card-body">
             <p class="work-meta">Technical report · 2025</p>
             <h3 class="work-title"><a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a></h3>
-            <p class="work-summary">A decoder-only architecture for generative recommendation that uses feedback from live services to model user preferences.</p>
+            <p class="work-summary">Introduces a decoder-only recommender that uses feedback from deployed systems to improve alignment with user preferences.</p>
             <p class="authors">Guorui Zhou, …, <strong>Shujie Yang</strong>, …</p>
             <div class="paper-links"><a href="https://arxiv.org/pdf/2508.20900">PDF</a></div>
           </div>
         </article>
-        <article class="card">
-          <div class="card-image">
-            <img src="images/CoSP.png" alt="" loading="lazy">
-          </div>
-          <div class="card-body">
-            <p class="work-meta">Advanced Science · 2026</p>
+      </div>
+
+      <div class="pub-list">
+        <article class="row">
+          <p class="work-meta">Advanced Science · 2026</p>
+          <div>
             <h3 class="work-title"><a href="https://doi.org/10.1002/advs.76917">CoSP: Reconfigurable Metamaterial Inverse Design via Contrastive Pretrained Large Language Model</a></h3>
             <p class="work-summary">Uses a contrastively pretrained language model to design metamaterials that operate across multiple configurations.</p>
             <p class="authors"><strong>Shujie Yang*</strong>, Yuqi Zhang*, Xuzhe Zhao, Yansong Tang, Kaichen Dong</p>
             <div class="paper-links"><a href="https://doi.org/10.1002/advs.76917">Publisher</a></div>
           </div>
         </article>
-      </div>
 
-      <div class="pub-list">
         <article class="row">
           <p class="work-meta">ACS Omega · 2026</p>
           <div>
@@ -253,19 +253,6 @@
             <p class="work-summary">Evaluates whether language models can infer fine-grained interests from long histories of user behavior.</p>
             <p class="authors">Lu Ren, …, <strong>Shujie Yang</strong>, …</p>
             <div class="paper-links"><a href="https://arxiv.org/pdf/2602.03056">PDF</a></div>
-          </div>
-        </article>
-
-        <article class="row">
-          <p class="work-meta">Technical report · 2025</p>
-          <div>
-            <h3 class="work-title"><a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a></h3>
-            <p class="work-summary">An end-to-end generative recommender and a study of how its performance scales with training compute.</p>
-            <p class="authors">Guorui Zhou, Jiaxin Deng, …, <strong>Shujie Yang</strong>, …</p>
-            <div class="paper-links">
-              <a href="https://arxiv.org/pdf/2506.13695">PDF</a>
-              <a href="https://huggingface.co/papers/2506.13695">Hugging Face</a>
-            </div>
           </div>
         </article>
 
@@ -302,7 +289,7 @@
       <div class="section-header"><h2 id="news-title">Updates</h2></div>
       <ul class="updates">
         <li class="row"><time class="date" datetime="2026-08">Aug 2026</time><p><a href="https://doi.org/10.1021/acsomega.6c02954">Cauchyformer</a> and <a href="https://doi.org/10.1002/advs.76917">CoSP</a> were published online in <i>ACS Omega</i> and <i>Advanced Science</i>, respectively.</p></li>
-        <li class="row"><time class="date" datetime="2026-03">Mar 2026</time><p>Joined Tencent’s WeChat Channels team to work on live-stream recommendation.</p></li>
+        <li class="row"><time class="date" datetime="2026-03">Mar 2026</time><p>Joined Tencent’s WeChat Channels team.</p></li>
         <li class="row"><time class="date" datetime="2026-02">Feb 2026</time><p>The <a href="https://arxiv.org/abs/2602.03056">ALPBench</a> preprint on long-term preference modeling appeared on arXiv.</p></li>
       </ul>
       <details class="archive">
@@ -325,7 +312,7 @@
             <p class="date">Mar 2026 – Present</p>
             <div>
               <h4 class="role-title">Tencent · WeChat Channels</h4>
-              <p class="role-notes">Researcher, Tencent Qingyun Program. Language models and agents for live-stream recommendation.</p>
+              <p class="role-notes">Researcher, Tencent Qingyun Program. Large language models, AI agents, and generative recommendation.</p>
             </div>
           </li>
           <li class="row">
@@ -392,11 +379,12 @@
   <script>
     const theme = document.documentElement;
     const toggle = document.querySelector('.theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
 
     function updateThemeControl() {
-      const dark = theme.dataset.theme ? theme.dataset.theme === 'dark' : prefersDark.matches;
+      const dark = theme.dataset.theme === 'dark';
       toggle.setAttribute('aria-pressed', String(dark));
+      themeColor.content = dark ? '#0d0d0d' : '#ffffff';
     }
 
     updateThemeControl();
@@ -409,7 +397,6 @@
       } catch {}
       updateThemeControl();
     });
-    prefersDark.addEventListener('change', updateThemeControl);
   </script>
 </body>
 </html>
