@@ -1,240 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shujie Yang — Researcher at Tencent</title>
-  <meta name="description" content="Shujie Yang's academic homepage. Research in LLM, Generative Recommendation, and AI for Science.">
-  <meta name="author" content="Shujie Yang">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211172484-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-211172484-2');
-  </script>
-
-  <!-- Fonts -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shujie Yang is a researcher at Tencent working on large language models, generative recommendation, and reinforcement learning for agents.">
+  <meta name="theme-color" content="#f8f8f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#181916" media="(prefers-color-scheme: dark)">
+  <title>Shujie Yang | Research</title>
+  <link rel="icon" href="images/portrait.JPG">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+  <script>
+    try {
+      const preference = localStorage.getItem('theme');
+      if (preference === 'light' || preference === 'dark') {
+        document.documentElement.dataset.theme = preference;
+      }
+    } catch {}
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f8f8f5;
+      --ink: #1b1c18;
+      --muted: #53554b;
+      --line: #dcded5;
+      --hover: #edeee7;
+      --accent: #4d5a3d;
+      --button-bg: #22231e;
+      --button-ink: #fff;
+      --gutter: clamp(22px, 5vw, 72px);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-synthesis: none;
+    }
 
-  <link rel="stylesheet" href="stylesheet.css">
-  <link rel="icon" href="images/thu.jpeg">
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --page: #181916;
+      --ink: #f1f0e9;
+      --muted: #b8bab0;
+      --line: #393b33;
+      --hover: #242620;
+      --accent: #c1cda7;
+      --button-bg: #eaece1;
+      --button-ink: #1b1c18;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        color-scheme: dark;
+        --page: #181916;
+        --ink: #f1f0e9;
+        --muted: #b8bab0;
+        --line: #393b33;
+        --hover: #242620;
+        --accent: #c1cda7;
+        --button-bg: #eaece1;
+        --button-ink: #1b1c18;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--page); color: var(--ink); font-size: 16px; line-height: 1.6; }
+    h1, h2, h3, h4, p, figure { margin: 0; }
+    h1, h2, h3, h4 { font-weight: 600; line-height: 1.12; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-underline-offset: 0.22em; }
+    a:hover { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    [hidden] { display: none !important; }
+    .wrap { width: min(1160px, calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+    .skip { position: fixed; z-index: 2; top: 12px; left: 12px; padding: 10px 16px; background: var(--button-bg); color: var(--button-ink); transform: translateY(-200%); }
+    .skip:focus { transform: none; color: var(--button-ink); }
+
+    .site-header { border-bottom: 1px solid var(--line); }
+    .header-inner { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 18px 34px; }
+    .wordmark { font-size: 17px; font-weight: 650; letter-spacing: -0.045em; text-decoration: none; white-space: nowrap; }
+    .nav { display: flex; align-items: center; gap: clamp(17px, 2.8vw, 38px); margin-left: auto; }
+    .nav a, .profiles a { text-decoration: none; }
+    .nav a { color: var(--muted); font-size: 14px; font-weight: 500; }
+    .nav a:hover, .profiles a:hover, .paper-links a:hover { color: var(--ink); text-decoration: underline; }
+    .theme-toggle { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: inherit; cursor: pointer; flex: 0 0 auto; }
+    .theme-toggle:hover { background: var(--hover); }
+    .theme-toggle svg { grid-area: 1 / 1; width: 17px; height: 17px; }
+    .theme-toggle[aria-pressed="true"] .moon, .theme-toggle[aria-pressed="false"] .sun { display: none; }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 29%); align-items: center; column-gap: clamp(40px, 8vw, 120px); padding-block: clamp(64px, 8vw, 118px); }
+    .kicker { color: var(--accent); font-size: 13px; font-weight: 650; letter-spacing: 0.035em; }
+    .hero h1 { margin-top: 16px; font-size: clamp(52px, 7.8vw, 112px); font-weight: 500; letter-spacing: -0.092em; line-height: 0.99; }
+    .name-cn { margin-top: 16px; color: var(--muted); font-size: 17px; letter-spacing: 0.12em; }
+    .intro { max-width: 38em; margin-top: 22px; font-size: clamp(17px, 1.7vw, 22px); line-height: 1.52; letter-spacing: -0.025em; }
+    .hero-actions, .profiles, .paper-links { display: flex; flex-wrap: wrap; align-items: center; }
+    .hero-actions { gap: 12px 24px; margin-top: 28px; }
+    .pill { display: inline-flex; gap: 12px; justify-content: center; align-items: center; border-radius: 100px; padding: 11px 17px; background: var(--button-bg); color: var(--button-ink); font-size: 14px; font-weight: 500; text-decoration: none; }
+    .pill:hover { color: var(--button-ink); text-decoration: underline; }
+    .profiles { gap: 10px 18px; color: var(--muted); font-size: 14px; }
+    .portrait { aspect-ratio: 7 / 8; overflow: hidden; border: 1px solid var(--line); border-radius: 5px; background: var(--hover); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(0.72); }
+
+    .section { border-top: 1px solid var(--line); padding-block: clamp(34px, 5.5vw, 76px); }
+    .section-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px 32px; margin-bottom: clamp(24px, 3.5vw, 42px); }
+    .section h2 { font-size: clamp(34px, 4.4vw, 58px); font-weight: 500; letter-spacing: -0.067em; }
+    .section-header > a { color: var(--muted); font-size: 14px; text-decoration: none; }
+    .section-header > a:hover { color: var(--ink); text-decoration: underline; }
+    .featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-bottom: 37px; }
+    .card { min-width: 0; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+    .card-image { display: grid; place-items: center; aspect-ratio: 2.4; padding: clamp(12px, 2.6vw, 34px); background: #e5e9dd; overflow: hidden; }
+    .card:nth-child(2) .card-image { background: #e8e5ee; }
+    .card-image img { width: 100%; height: 100%; min-height: 0; object-fit: contain; mix-blend-mode: multiply; }
+    .card-body { padding: clamp(18px, 2.2vw, 30px); }
+    .work-meta, .date { color: var(--muted); font-size: 13px; }
+    .work-meta .award { color: var(--accent); font-weight: 650; }
+    .work-title { margin-top: 7px; font-size: clamp(19px, 2.25vw, 29px); letter-spacing: -0.045em; line-height: 1.2; }
+    .work-title a { text-decoration: none; }
+    .work-title a:hover { text-decoration: underline; }
+    .work-summary { margin-top: 8px; }
+    .authors, .work-summary, .role-notes, .contact-note { color: var(--muted); }
+    .authors { margin-top: 7px; font-size: 13px; }
+    .authors strong { color: var(--ink); font-weight: 600; }
+    .paper-links { gap: 5px 17px; margin-top: 12px; font-size: 13px; font-weight: 500; }
+    .paper-links a { text-decoration-color: var(--line); }
+    .row { display: grid; grid-template-columns: minmax(132px, 21%) minmax(0, 1fr); gap: 8px 26px; align-items: baseline; padding-block: 18px; border-top: 1px solid var(--line); }
+    .row .work-title { margin-top: 0; }
+    .row:first-child { border-top: 0; }
+    .pub-list .row:first-child { border-top: 1px solid var(--line); }
+    .row p + p { margin-top: 3px; }
+    .updates, .roles { margin: 0; padding: 0; list-style: none; }
+    .updates a { text-decoration-color: var(--line); }
+    .archive { margin-top: 16px; }
+    .archive summary { width: fit-content; color: var(--muted); font-size: 14px; font-weight: 500; cursor: pointer; }
+    .archive summary:hover { color: var(--ink); }
+    .archive .updates { margin-top: 12px; }
+    .group + .group { margin-top: 27px; }
+    .group h3 { padding-bottom: 11px; border-bottom: 1px solid var(--line); color: var(--accent); font-size: 14px; font-weight: 650; }
+    .role-title { font-size: 19px; letter-spacing: -0.035em; line-height: 1.3; }
+    .role-notes { margin-top: 4px; font-size: 14px; }
+    .role-notes a { text-decoration-color: var(--line); }
+    .contact-note { margin-top: 15px; font-size: 14px; }
+    .footer { border-top: 1px solid var(--line); }
+    .footer .wrap { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 22px; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 780px) {
+      .hero { column-gap: 28px; }
+      .hero h1 { letter-spacing: -0.08em; }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; padding-block: 11px; }
+      .nav { grid-row: 2; grid-column: 1 / -1; margin: 3px 0 0; gap: 8px 20px; flex-wrap: wrap; }
+      .nav a { display: inline-block; padding-block: 6px; }
+      .theme-toggle { grid-row: 1; grid-column: 2; }
+      .hero { grid-template-columns: 1fr; row-gap: 26px; padding-block: 44px 42px; }
+      .hero h1 { font-size: clamp(48px, 11vw, 70px); }
+      .portrait { width: min(49%, 200px); }
+      .featured { grid-template-columns: 1fr; gap: 15px; margin-bottom: 25px; }
+      .row { grid-template-columns: minmax(0, 1fr); }
+      .card-image { aspect-ratio: 2.25; }
+    }
+  </style>
 </head>
-
-<body>
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Shujie Yang</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top">Shujie Yang</a>
+      <nav class="nav" aria-label="Main navigation">
         <a href="#publications">Publications</a>
+        <a href="#news">Updates</a>
         <a href="#experience">Experience</a>
-        <a href="#misc">Misc</a>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M21 13.1A9 9 0 0 1 10.9 3a9 9 0 1 0 10.1 10.1Z"/>
+        </svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+        </svg>
       </button>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero" id="about">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <p class="hero-greeting">Hi, I'm</p>
-        <h1 class="hero-name">Shujie Yang <span class="hero-cn">杨舒杰</span></h1>
-        <p class="hero-tagline">Researcher @ Tencent WXG &nbsp;·&nbsp; Tsinghua University M.S.</p>
-        <p class="hero-bio">
-          I research <strong>Large Language Models</strong>, <strong>Generative Recommendation</strong>, and <strong>Agentic Reinforcement Learning</strong>. Currently at <a href="https://www.tencent.com/" target="_blank">Tencent</a> WeChat Channel (WXG), working on LLM and Agent for live streaming recommendation.
-        </p>
-        <p class="hero-bio">
-          I received my M.S. from <a href="https://www.tbsi.edu.cn/" target="_blank">Tsinghua Shenzhen International Graduate School</a>, advised by Prof. <a href="http://www.tbsi.edu.cn/dkc/main.htm" target="_blank">Kaichen Dong</a> and co-supervised by Prof. <a href="https://andytang15.github.io" target="_blank">Yansong Tang</a>. Prior to that, I obtained my B.E. in Mathematics from <a href="http://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>.
-        </p>
-        <div class="hero-links">
-          <a href="mailto:yangsj23@mails.tsinghua.edu.cn" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email
-          </a>
-          <a href="https://scholar.google.com/citations?user=piophWsAAAAJ&hl=zh-CN" class="btn btn-outline" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/></svg>
-            Scholar
-          </a>
-          <a href="https://github.com/YangSJ2019" class="btn btn-outline" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/shujie-yang" class="btn btn-outline" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-      <div class="hero-portrait">
-        <div class="portrait-wrapper">
-          <img src="images/portrait.JPG" alt="Shujie Yang" loading="eager">
-        </div>
-      </div>
     </div>
   </header>
 
-  <main class="container">
-    <!-- News Section -->
-    <section class="section" id="news">
-      <h2 class="section-title">Recent News</h2>
-      <div class="news-list">
-        <div class="news-item">
-          <span class="news-date">Jul 2026</span>
-          <span class="news-text">Our paper <strong>Cauchyformer</strong> has been accepted by <strong>ACS Omega</strong> (IF 4.1, JCR Q2).</span>
+  <main class="wrap" id="main" tabindex="-1">
+    <section class="hero" id="about" aria-labelledby="name">
+      <div>
+        <p class="kicker">Researcher at Tencent</p>
+        <h1 id="name">Shujie Yang</h1>
+        <p class="name-cn" lang="zh-Hans">杨舒杰</p>
+        <p class="intro">I work on large language models, generative recommendation, and reinforcement learning for agents. At Tencent’s WeChat Channels team, I focus on live-stream recommendation.</p>
+        <div class="hero-actions">
+          <a class="pill" href="#publications">View publications <span aria-hidden="true">↓</span></a>
+          <div class="profiles">
+            <a href="https://scholar.google.com/citations?user=piophWsAAAAJ">Google Scholar <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/YangSJ2019">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <div class="news-item">
-          <span class="news-date">Jul 2026</span>
-          <span class="news-text">Our paper <a href="http://doi.org/10.1002/advs.76917">CoSP</a> has been accepted by <strong>Advanced Science</strong> (IF 14.3, JCR Q1).</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Mar 2026</span>
-          <span class="news-text">Joined <a href="https://www.tencent.com/">Tencent</a> WXG (WeChat Channel) full-time, researching LLM and Agent.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Feb 2026</span>
-          <span class="news-text"><a href="https://arxiv.org/abs/2602.03056">ALPBench</a> — A benchmark for attribution-level long-term personal behavior understanding — is on arXiv.</span>
-        </div>
-        <div class="news-extra-group" id="newsExtra">
-        <div class="news-item">
-          <span class="news-date">Nov 2025</span>
-          <span class="news-text"><a href="http://doi.org/10.1002/advs.76917">CoSP</a> — Reconfigurable multi-state metamaterial inverse design via contrastive pretrained LLM — is now published in <strong>Advanced Science</strong>.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Aug 2025</span>
-          <span class="news-text"><a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a> released.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Jun 2025</span>
-          <span class="news-text"><a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a> released — reshaping recommendation with end-to-end generative approach.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Jun 2025</span>
-          <span class="news-text">Joined Kuaishou Recommendation LLM Group (<strong>OneRec</strong>) as a research intern.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Nov 2024</span>
-          <span class="news-text">Joined Xiaohongshu AIGC Group as a research intern.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Jun 2023</span>
-          <span class="news-text"><a href="https://arxiv.org/abs/2208.08200">AHEAD</a> accepted to CIAC 2023 and received <strong>Best Paper Award</strong>.</span>
-        </div>
-        </div>
-        <button class="news-toggle" id="newsToggle" aria-expanded="false" aria-controls="newsExtra">
-          <span class="news-toggle-label">Show more news</span>
-          <svg class="news-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
       </div>
+      <figure class="portrait">
+        <img src="images/portrait.JPG" alt="Portrait of Shujie Yang" fetchpriority="high">
+      </figure>
     </section>
 
-    <!-- Publications Section -->
-    <section class="section" id="publications">
-      <h2 class="section-title">Selected Publications</h2>
-      <p class="section-subtitle">* denotes equal contribution</p>
+    <section class="section" id="publications" aria-labelledby="publications-title">
+      <div class="section-header">
+        <h2 id="publications-title">Selected publications</h2>
+        <a href="https://scholar.google.com/citations?user=piophWsAAAAJ">All publications on Google Scholar <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="featured">
+        <article class="card">
+          <div class="card-image">
+            <img src="images/OneRec-V2.png" alt="" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="work-meta">Technical report · 2025</p>
+            <h3 class="work-title"><a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a></h3>
+            <p class="work-summary">A decoder-only architecture for generative recommendation that uses feedback from live services to model user preferences.</p>
+            <p class="authors">Guorui Zhou, …, <strong>Shujie Yang</strong>, …</p>
+            <div class="paper-links"><a href="https://arxiv.org/pdf/2508.20900">PDF</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image">
+            <img src="images/CoSP.png" alt="" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="work-meta">Advanced Science · 2026</p>
+            <h3 class="work-title"><a href="https://doi.org/10.1002/advs.76917">CoSP: Reconfigurable Metamaterial Inverse Design via Contrastive Pretrained Large Language Model</a></h3>
+            <p class="work-summary">Uses a contrastively pretrained language model to design metamaterials that operate across multiple configurations.</p>
+            <p class="authors"><strong>Shujie Yang*</strong>, Yuqi Zhang*, Xuzhe Zhao, Yansong Tang, Kaichen Dong</p>
+            <div class="paper-links"><a href="https://doi.org/10.1002/advs.76917">Publisher</a></div>
+          </div>
+        </article>
+      </div>
 
       <div class="pub-list">
-        <!-- OneRec-V2 -->
-        <article class="pub-item">
-          <div class="pub-thumb">
-            <img src="images/OneRec-V2.png" alt="OneRec-V2" loading="lazy">
-          </div>
-          <div class="pub-info">
-            <h3 class="pub-title"><a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a></h3>
-            <p class="pub-authors">Guorui Zhou, ..., <strong>Shujie Yang</strong>, ..., Ziming Li et al.</p>
-            <p class="pub-venue">arXiv 2025</p>
-            <p class="pub-desc">Proposes a Lazy Decoder-Only Architecture that eliminates encoder bottlenecks and incorporates real-world user feedback for better preference alignment.</p>
-            <div class="pub-links">
-              <a href="https://arxiv.org/abs/2508.20900">arXiv</a>
-              <a href="https://arxiv.org/pdf/2508.20900.pdf">PDF</a>
-            </div>
+        <article class="row">
+          <p class="work-meta">ACS Omega · 2026</p>
+          <div>
+            <h3 class="work-title"><a href="https://doi.org/10.1021/acsomega.6c02954">Cauchyformer: Few-Shot Spectrum Inference for Photonic Metasurfaces via Mixture of Cauchy</a></h3>
+            <p class="authors"><strong>Shujie Yang*</strong>, Xuzhe Zhao*, Chunjiang Li, Yuxiao Li, Hongyan Fu, Yansong Tang, Kaichen Dong</p>
+            <div class="paper-links"><a href="https://doi.org/10.1021/acsomega.6c02954">Publisher</a></div>
           </div>
         </article>
 
-        <!-- OneRec -->
-        <article class="pub-item">
-          <div class="pub-thumb">
-            <img src="images/OneRec.png" alt="OneRec" loading="lazy">
+        <article class="row">
+          <p class="work-meta">arXiv preprint · 2026</p>
+          <div>
+            <h3 class="work-title"><a href="https://arxiv.org/abs/2602.03056">ALPBench: A Benchmark for Attribution-Level Long-Term Personal Behavior Understanding</a></h3>
+            <p class="work-summary">Evaluates whether language models can infer fine-grained interests from long histories of user behavior.</p>
+            <p class="authors">Lu Ren, …, <strong>Shujie Yang</strong>, …</p>
+            <div class="paper-links"><a href="https://arxiv.org/pdf/2602.03056">PDF</a></div>
           </div>
-          <div class="pub-info">
-            <h3 class="pub-title"><a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a></h3>
-            <p class="pub-authors">Guorui Zhou, Jiaxin Deng, ..., <strong>Shujie Yang</strong>, ..., Zhanyu Liu et al.</p>
-            <p class="pub-venue">arXiv 2025</p>
-            <p class="pub-desc">Reshapes recommendation through an end-to-end generative approach, enhancing computational FLOPs by 10x and identifying scaling laws for recommendations.</p>
-            <div class="pub-links">
+        </article>
+
+        <article class="row">
+          <p class="work-meta">Technical report · 2025</p>
+          <div>
+            <h3 class="work-title"><a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a></h3>
+            <p class="work-summary">An end-to-end generative recommender and a study of how its performance scales with training compute.</p>
+            <p class="authors">Guorui Zhou, Jiaxin Deng, …, <strong>Shujie Yang</strong>, …</p>
+            <div class="paper-links">
+              <a href="https://arxiv.org/pdf/2506.13695">PDF</a>
               <a href="https://huggingface.co/papers/2506.13695">Hugging Face</a>
-              <a href="https://arxiv.org/pdf/2506.13695.pdf">PDF</a>
             </div>
           </div>
         </article>
 
-        <!-- CoSP -->
-        <article class="pub-item">
-          <div class="pub-thumb">
-            <img src="images/CoSP.png" alt="CoSP" loading="lazy">
-          </div>
-          <div class="pub-info">
-            <h3 class="pub-title"><a href="http://doi.org/10.1002/advs.76917">CoSP: Reconfigurable Multi-State Metamaterial Inverse Design via Contrastive Pretrained Large Language Model</a></h3>
-            <p class="pub-authors"><strong>Shujie Yang</strong>, Xuzhe Zhao, Yuqi Zhang, Yansong Tang, Kaichen Dong</p>
-            <p class="pub-venue">Advanced Science, 2026 · IF 14.3 · JCR Q1</p>
-            <p class="pub-desc">An intelligent inverse design method based on contrastive pretrained LLM for reconfigurable multi-state metamaterials.</p>
-            <div class="pub-links">
-              <a href="http://doi.org/10.1002/advs.76917">PDF</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Cauchyformer -->
-        <article class="pub-item">
-          <div class="pub-thumb">
-            <img src="images/Cauchyformer.svg" alt="Cauchyformer" loading="lazy">
-          </div>
-          <div class="pub-info">
-            <h3 class="pub-title"><a href="https://doi.org/10.1021/acsomega.6c02954">Cauchyformer: Physics-Informed Few-shot Spectrum Inference for Photonic Metasurfaces</a></h3>
-            <p class="pub-authors"><strong>Shujie Yang</strong>, Chunjiang Li, Hongyan Fu, Yansong Tang, Kaichen Dong</p>
-            <p class="pub-venue">ACS Omega, 2026 · IF 4.1 · JCR Q2</p>
-            <div class="pub-links">
-              <a href="https://doi.org/10.1021/acsomega.6c02954">PDF</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- AHEAD -->
-        <article class="pub-item">
-          <div class="pub-thumb">
-            <img src="images/AHEAD.jpg" alt="AHEAD" loading="lazy">
-          </div>
-          <div class="pub-info">
-            <h3 class="pub-title"><a href="https://arxiv.org/abs/2208.08200">AHEAD: A Triple Attention Based Heterogeneous Graph Anomaly Detection Approach</a></h3>
-            <p class="pub-authors"><strong>Shujie Yang</strong>, <a href="https://zhangbinchi.github.io/">Binchi Zhang</a>, <a href="https://bunsenfeng.github.io/">Shangbin Feng</a>, <a href="https://people.csail.mit.edu/cloudygoose/">Zhaoxuan Tan</a>, <a href="https://gr.xjtu.edu.cn/en/web/qhzheng">Qinghua Zheng</a>, Jun Zhou, <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a></p>
-            <p class="pub-venue">CIAC 2023 · <strong class="award">Best Paper Award</strong></p>
-            <div class="pub-links">
+        <article class="row">
+          <p class="work-meta">CIAC · 2023<br><span class="award">Best Paper Award</span></p>
+          <div>
+            <h3 class="work-title"><a href="https://arxiv.org/abs/2208.08200">AHEAD: A Triple Attention Based Heterogeneous Graph Anomaly Detection Approach</a></h3>
+            <p class="authors"><strong>Shujie Yang</strong>, Binchi Zhang, Shangbin Feng, Zhaoxuan Tan, Qinghua Zheng, Jun Zhou, Minnan Luo</p>
+            <div class="paper-links">
               <a href="https://github.com/YangSJ2019/AHEAD">Code</a>
-              <a href="images/AHEAD Best Paper.pdf">Award</a>
+              <a href="images/AHEAD%20Best%20Paper.pdf">Award certificate</a>
             </div>
           </div>
         </article>
 
-        <!-- TwiBot-22 -->
-        <article class="pub-item">
-          <div class="pub-thumb">
-            <img src="images/Twibot-22.jpg" alt="TwiBot-22" loading="lazy">
-          </div>
-          <div class="pub-info">
-            <h3 class="pub-title"><a href="https://arxiv.org/abs/2206.04564">TwiBot-22: Towards Graph-Based Twitter Bot Detection</a></h3>
-            <p class="pub-authors"><a href="https://bunsenfeng.github.io/">Shangbin Feng*</a>, <a href="http://zhaoxuan.info/">Zhaoxuan Tan*</a>, Herun Wan*, ..., <strong>Shujie Yang</strong>, ..., <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a></p>
-            <p class="pub-venue">NeurIPS 2022 · Datasets and Benchmarks Track</p>
-            <div class="pub-links">
+        <article class="row">
+          <p class="work-meta">NeurIPS · 2022<br>Datasets and Benchmarks</p>
+          <div>
+            <h3 class="work-title"><a href="https://arxiv.org/abs/2206.04564">TwiBot-22: Towards Graph-Based Twitter Bot Detection</a></h3>
+            <p class="authors">Shangbin Feng, Zhaoxuan Tan, Herun Wan, …, <strong>Shujie Yang</strong>, …</p>
+            <div class="paper-links">
               <a href="https://twibot22.github.io/">Project</a>
               <a href="https://github.com/LuoUndergradXJTU/TwiBot-22">Code</a>
               <a href="data/Twibot-22.bib">BibTeX</a>
@@ -243,185 +295,121 @@
           </div>
         </article>
       </div>
+      <p class="contact-note">* Indicates equal contribution.</p>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-      <h2 class="section-title">Experience</h2>
+    <section class="section" id="news" aria-labelledby="news-title">
+      <div class="section-header"><h2 id="news-title">Updates</h2></div>
+      <ul class="updates">
+        <li class="row"><time class="date" datetime="2026-08">Aug 2026</time><p><a href="https://doi.org/10.1021/acsomega.6c02954">Cauchyformer</a> and <a href="https://doi.org/10.1002/advs.76917">CoSP</a> were published online in <i>ACS Omega</i> and <i>Advanced Science</i>, respectively.</p></li>
+        <li class="row"><time class="date" datetime="2026-03">Mar 2026</time><p>Joined Tencent’s WeChat Channels team to work on live-stream recommendation.</p></li>
+        <li class="row"><time class="date" datetime="2026-02">Feb 2026</time><p>The <a href="https://arxiv.org/abs/2602.03056">ALPBench</a> preprint on long-term preference modeling appeared on arXiv.</p></li>
+      </ul>
+      <details class="archive">
+        <summary>Earlier updates</summary>
+        <ul class="updates">
+          <li class="row"><time class="date" datetime="2025-08">Aug 2025</time><p>Released the <a href="https://arxiv.org/abs/2508.20900">OneRec-V2 Technical Report</a>.</p></li>
+          <li class="row"><time class="date" datetime="2025-06">Jun 2025</time><p>Released the <a href="https://arxiv.org/abs/2506.13695">OneRec Technical Report</a> and joined Kuaishou’s Recommendation LLM Group as a research intern.</p></li>
+          <li class="row"><time class="date" datetime="2024-11">Nov 2024</time><p>Joined Xiaohongshu’s AIGC Group as a research intern.</p></li>
+          <li class="row"><time class="date" datetime="2023-06">Jun 2023</time><p><a href="https://arxiv.org/abs/2208.08200">AHEAD</a> received the Best Paper Award at CIAC 2023.</p></li>
+        </ul>
+      </details>
+    </section>
 
-      <div class="exp-category">
-        <h3 class="exp-cat-title">Industry</h3>
-        <div class="exp-list">
-          <div class="exp-item">
-            <div class="exp-logo"><img src="images/tencent.png" alt="Tencent"></div>
-            <div class="exp-detail">
-              <div class="exp-header">
-                <h4>Tencent — WXG WeChat Channel</h4>
-                <span class="exp-date">Mar 2026 – Present</span>
-              </div>
-              <p class="exp-role">Full-time Researcher · Tencent Qingyun Program (青云计划) · LLM &amp; Agent for Recommendation</p>
-              <p class="exp-desc">Researching LLMs and agents for live streaming recommendation in WeChat Channel.</p>
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section-header"><h2 id="experience-title">Experience</h2></div>
+      <div class="group">
+        <h3>Industry</h3>
+        <ul class="roles">
+          <li class="row">
+            <p class="date">Mar 2026 – Present</p>
+            <div>
+              <h4 class="role-title">Tencent · WeChat Channels</h4>
+              <p class="role-notes">Researcher, Tencent Qingyun Program. Language models and agents for live-stream recommendation.</p>
             </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-logo"><img src="images/kuaishou.png" alt="Kuaishou"></div>
-            <div class="exp-detail">
-              <div class="exp-header">
-                <h4>Kuaishou — Recommendation LLM Group</h4>
-                <span class="exp-date">Jun 2025 – Mar 2026</span>
-              </div>
-              <p class="exp-role">Research Intern · Recommendation LLMs (OneRec)</p>
-              <p class="exp-desc">Applied LLMs to recommendation, focusing on RLHF of generative recommendation LLM (OneRec). Mentor: Qigen Hu.</p>
+          </li>
+          <li class="row">
+            <p class="date">Jun 2025 – Mar 2026</p>
+            <div>
+              <h4 class="role-title">Kuaishou · Recommendation LLM Group</h4>
+              <p class="role-notes">Research intern. Worked on reinforcement learning from human feedback for OneRec. Mentored by Qigen Hu.</p>
             </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-logo"><img src="images/xiaohongshu.jpeg" alt="Xiaohongshu"></div>
-            <div class="exp-detail">
-              <div class="exp-header">
-                <h4>Xiaohongshu — AIGC Group</h4>
-                <span class="exp-date">Nov 2024 – Mar 2025</span>
-              </div>
-              <p class="exp-role">Research Intern</p>
-              <p class="exp-desc">Improved text-to-image generation models (Stable Diffusion, Flux). Mentor: Shuang Sun.</p>
+          </li>
+          <li class="row">
+            <p class="date">Nov 2024 – Mar 2025</p>
+            <div>
+              <h4 class="role-title">Xiaohongshu · AIGC Group</h4>
+              <p class="role-notes">Research intern. Worked on text-to-image generation with Stable Diffusion and FLUX. Mentored by Shuang Sun.</p>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-
-      <div class="exp-category">
-        <h3 class="exp-cat-title">Education</h3>
-        <div class="exp-list">
-          <div class="exp-item">
-            <div class="exp-logo"><img src="images/thu.jpeg" alt="Tsinghua University"></div>
-            <div class="exp-detail">
-              <div class="exp-header">
-                <h4>Tsinghua University</h4>
-                <span class="exp-date">Aug 2023 – Jun 2026</span>
-              </div>
-              <p class="exp-role">M.S. in Data Science and Information Technology · Tsinghua-Berkeley Shenzhen Institute</p>
-              <p class="exp-desc">Advisor: Prof. <a href="http://www.tbsi.edu.cn/dkc/main.htm">Kaichen Dong</a> · Co-advisor: Prof. <a href="https://andytang15.github.io">Yansong Tang</a></p>
+      <div class="group">
+        <h3>Education and academic visits</h3>
+        <ul class="roles">
+          <li class="row">
+            <p class="date">Aug 2023 – Jun 2026</p>
+            <div>
+              <h4 class="role-title">Tsinghua University</h4>
+              <p class="role-notes">M.S. in Data Science and Information Technology, Tsinghua-Berkeley Shenzhen Institute. Advised by <a href="http://www.tbsi.edu.cn/dkc/main.htm">Kaichen Dong</a> and <a href="https://andytang15.github.io/">Yansong Tang</a>.</p>
             </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-logo"><img src="images/XJTU.png" alt="Xi'an Jiaotong University"></div>
-            <div class="exp-detail">
-              <div class="exp-header">
-                <h4>Xi'an Jiaotong University</h4>
-                <span class="exp-date">Aug 2019 – Jul 2023</span>
-              </div>
-              <p class="exp-role">B.E. in Information and Computational Science · School of Mathematics and Statistics</p>
-              <p class="exp-desc">Advisor: Prof. <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a></p>
+          </li>
+          <li class="row">
+            <p class="date">Aug 2019 – Jul 2023</p>
+            <div>
+              <h4 class="role-title">Xi’an Jiaotong University</h4>
+              <p class="role-notes">B.E. in Information and Computational Science, School of Mathematics and Statistics. Advised by <a href="https://gr.xjtu.edu.cn/en/web/minnluo">Minnan Luo</a>.</p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-category">
-        <h3 class="exp-cat-title">Academic Visits</h3>
-        <div class="exp-list">
-          <div class="exp-item">
-            <div class="exp-logo"><img src="images/SUSTech.webp" alt="SUSTech"></div>
-            <div class="exp-detail">
-              <div class="exp-header">
-                <h4>Southern University of Science and Technology — VIP Group</h4>
-                <span class="exp-date">Feb – May 2023</span>
-              </div>
-              <p class="exp-role">Visiting Student</p>
-              <p class="exp-desc">Anomaly detection on industrial images. Mentor: <a href="https://faculty.sustech.edu.cn/?iscss=1&p=98966&tagid=fengzheng&go=1">Jinbao Wang</a></p>
+          </li>
+          <li class="row">
+            <p class="date">Feb – May 2023</p>
+            <div>
+              <h4 class="role-title">Southern University of Science and Technology</h4>
+              <p class="role-notes">Visiting student in the VIP Group. Worked on industrial image anomaly detection with <a href="https://faculty.sustech.edu.cn/?iscss=1&amp;p=98966&amp;tagid=fengzheng&amp;go=1">Jinbao Wang</a>.</p>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- Miscellaneous Section -->
-    <section class="section" id="misc">
-      <h2 class="section-title">Beyond Research</h2>
-      <div class="misc-grid">
-        <div class="misc-card">
-          <div class="misc-icon">&#127939;</div>
-          <p>Avid jogger and badminton player.</p>
-        </div>
-        <div class="misc-card">
-          <div class="misc-icon">&#127918;</div>
-          <p>Splatoon 3 and Valorant enthusiast.</p>
-        </div>
-        <div class="misc-card">
-          <div class="misc-icon">&#127916;</div>
-          <p>Huge fan of Stephen Curry, the John Wick series, Jujutsu Kaisen, and Chainsaw Man.</p>
-        </div>
-        <div class="misc-card">
-          <div class="misc-icon">&#9749;</div>
-          <p>Always open to collaboration — feel free to reach out!</p>
-        </div>
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="section-header"><h2 id="contact-title">Contact</h2></div>
+      <div class="profiles">
+        <a href="mailto:yangsj23@mails.tsinghua.edu.cn">Email <span aria-hidden="true">↗</span></a>
+        <a href="https://www.linkedin.com/in/shujie-yang">LinkedIn <span aria-hidden="true">↗</span></a>
       </div>
+      <p class="contact-note" id="misc">Outside work, I enjoy running and playing badminton.</p>
     </section>
-
-    <!-- Visitor Map (MapMyVisitors — ClustrMaps went dead) -->
-    <div class="visitor-map">
-      <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=dVV_j8aR7x6qnvHi1_-3tQDkozL4RHflAnzJsD7OCA0&cl=ffffff&w=a"></script>
-    </div>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Shujie Yang &nbsp;·&nbsp; Last updated July 2026</p>
+    <div class="wrap">
+      <p>© 2026 Shujie Yang</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>
   </footer>
 
   <script>
-    // Theme Toggle
-    const toggle = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      root.setAttribute('data-theme', 'dark');
+    const theme = document.documentElement;
+    const toggle = document.querySelector('.theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function updateThemeControl() {
+      const dark = theme.dataset.theme ? theme.dataset.theme === 'dark' : prefersDark.matches;
+      toggle.setAttribute('aria-pressed', String(dark));
     }
+
+    updateThemeControl();
+    toggle.hidden = false;
     toggle.addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      const nextTheme = toggle.getAttribute('aria-pressed') === 'true' ? 'light' : 'dark';
+      theme.dataset.theme = nextTheme;
+      try {
+        localStorage.setItem('theme', nextTheme);
+      } catch {}
+      updateThemeControl();
     });
-
-    // Navbar scroll effect
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      const currentScroll = window.scrollY;
-      if (currentScroll > 60) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-      lastScroll = currentScroll;
-    });
-
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.pub-item, .exp-item, .news-item, .misc-card').forEach(el => {
-      el.classList.add('animate-on-scroll');
-      observer.observe(el);
-    });
-
-    // News collapsible
-    const newsList = document.querySelector('.news-list');
-    const newsToggle = document.getElementById('newsToggle');
-    const newsToggleLabel = newsToggle.querySelector('.news-toggle-label');
-    newsToggle.addEventListener('click', () => {
-      const expanded = newsList.classList.toggle('news-expanded');
-      newsToggle.setAttribute('aria-expanded', expanded);
-      newsToggleLabel.textContent = expanded ? 'Show less' : 'Show more news';
-      // Force-reveal hidden items so the scroll animation never leaves them invisible.
-      newsList.querySelectorAll('.news-extra-group .news-item').forEach(el => el.classList.add('visible'));
-    });
+    prefersDark.addEventListener('change', updateThemeControl);
   </script>
 </body>
 </html>
